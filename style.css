@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --azul1: #2596be;
+    --azul2: #006680;
+    --azul3: #061c25;
+    --preto: #111111;
+    --caramelo: #c28f2c;
+    --branco: #ffffff;
+    --cinza: #f8f8f8;
+}
+
+main {
+    min-height: 100vh;
+    background-color: var(--preto);
+    display: flex;
+    justify-content: center;
+}
+
+.main-container {
+    max-width: 1280px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+.main-container h2 {
+    color: var(--branco);
+    font-size: 2rem;
+}
+
+.input-nome {
+    outline: none;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid var(--caramelo);
+    color: white;
+    width: 350px;
+    padding: 0.5rem 1rem;
+    margin: 1rem auto;
+    font-size: 1rem;
+}
+
+.loading-gif {
+    margin-top: 3rem;
+}
+
+.campeoes {
+    width: 100%;
+    display: flex;
+    padding: 1rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    /* transition: opacity .5s ease-in-out; */
+}
+
+.campeao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 280px;
+    width: 100%;
+    color: var(--preto);
+    background-color: var(--caramelo);
+    cursor: pointer;
+    transition: all .2s;
+    overflow: hidden;
+    animation: anime .3s linear 0s 1 normal forwards;
+}
+
+.campeao:hover {
+    background-color: var(--azul3);
+    color: var(--branco);
+}
+
+.campeao:hover .campeao-nome {
+    padding-left: 3rem;
+}
+
+.campeao:hover .campeao-img {
+    transform: none
+}
+
+.campeao-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all .2s;
+    transform: scale3d(1.05, 1.05, 1);
+}
+
+.img-container {
+    height: 300px;
+    overflow: hidden;
+}
+
+.campeao-nome {
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: .08rem;
+    font-style: italic;
+    padding: .5rem;
+    padding-left: 1.5rem;
+    align-self: flex-start;
+    transition: all .2s;
+}
+
+.nome-invalido {
+    color: var(--branco);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.nome-invalido span {
+    font-size: 1.2rem;
+}
+
+@keyframes anime {
+	0% {
+		opacity: 0;
+		transform: translateX(-50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
