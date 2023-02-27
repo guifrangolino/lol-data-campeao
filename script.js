@@ -5,7 +5,7 @@ const campeaoNome = document.querySelectorAll('.campeao-nome')
 const input = document.querySelector('.input-nome')
 const loadingGif = document.querySelector('.loading-gif')
 
-fetch('http://ddragon.leagueoflegends.com/cdn/13.4.1/data/pt_BR/champion.json')
+fetch('https://ddragon.leagueoflegends.com/cdn/13.4.1/data/pt_BR/champion.json')
     .then(resp => resp.json())
     .then(data => Object.keys(data.data))
     .then(nomes => nomes.forEach(nome => {
