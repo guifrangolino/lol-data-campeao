@@ -26,15 +26,27 @@ input.addEventListener('input', inputListener)
 
 function inputListener() {
     let champName = document.querySelectorAll('.campeao')
+    let champDisplay = 0
+
     champName.forEach(champ => {
         let nome = champ.children[1].innerHTML.toLowerCase()
-        
+
         if (nome.includes(input.value.toLowerCase())) {
             champ.style.display = 'flex'
         } else {
             champ.style.display = 'none'
+            champDisplay += 1
+            console.log(champDisplay)
         }
+
     })
+
+    if (champDisplay == champName.length) {
+        document.querySelector('.nome-invalido').style.display = 'flex'
+    } else {
+        document.querySelector('.nome-invalido').style.display = 'none'
+    }
+
 }
 
 // nome-invalido
