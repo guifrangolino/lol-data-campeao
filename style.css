@@ -146,7 +146,6 @@ main {
     width: 1280px;
     height: 550px;
     animation: displayDado .1s linear 0s 1 normal forwards;
-    overflow-y: scroll;
 }
 
 .campeao-dados-img {
