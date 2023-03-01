@@ -18,7 +18,7 @@ fetch('https://ddragon.leagueoflegends.com/cdn/13.4.1/data/pt_BR/champion.json')
         if (nome == 'Fiddlesticks') dataCampeoes[nome].id = 'FiddleSticks'
 
         const elem = `<li class="campeao">
-            <div class="img-container"><img class="campeao-img" src="http://ddragon.leagueoflegends.com/cdn/img/champion/centered/${dataCampeoes[nome].id}_0.jpg" alt="imagem do campeão"></div>
+            <div class="img-container"><img class="campeao-img" src="https://ddragon.leagueoflegends.com/cdn/img/champion/centered/${dataCampeoes[nome].id}_0.jpg" alt="imagem do campeão"></div>
             <p class="campeao-nome">${dataCampeoes[nome].name}</p>
             </li>`
             
@@ -78,8 +78,8 @@ fetch('https://ddragon.leagueoflegends.com/cdn/13.4.1/data/pt_BR/champion.json')
                 // dadosContainer.style.display = 'flex'
 
                 // console.log(champNome)
-                dadosImg.src = `http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${dataCampeoes[champNome].id}_0.jpg`
-                if (champNome == 'Fiddlesticks') dadosImg.src = `http://ddragon.leagueoflegends.com/cdn/img/champion/loading/FiddleSticks_0.jpg`
+                dadosImg.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${dataCampeoes[champNome].id}_0.jpg`
+                if (champNome == 'Fiddlesticks') dadosImg.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/loading/FiddleSticks_0.jpg`
                 // console.log(campeaoDadosNome)
                 
                 fetch(`https://ddragon.leagueoflegends.com/cdn/13.4.1/data/pt_BR/champion/${champNome}.json`)
@@ -93,11 +93,11 @@ fetch('https://ddragon.leagueoflegends.com/cdn/13.4.1/data/pt_BR/champion.json')
                         campeaoDadosTitulo.innerHTML = campeaoAtual.title
 
                         // IMAGEM DAS HABILIDADES
-                        habilidadeIcones[0].childNodes[1].src = `http://ddragon.leagueoflegends.com/cdn/13.4.1/img/passive/${campeaoAtual.passive.image.full}`
-                        habilidadeIcones[1].childNodes[1].src = `http://ddragon.leagueoflegends.com/cdn/13.4.1/img/spell/${campeaoAtual.spells[0].image.full}`
-                        habilidadeIcones[2].childNodes[1].src = `http://ddragon.leagueoflegends.com/cdn/13.4.1/img/spell/${campeaoAtual.spells[1].image.full}`
-                        habilidadeIcones[3].childNodes[1].src = `http://ddragon.leagueoflegends.com/cdn/13.4.1/img/spell/${campeaoAtual.spells[2].image.full}`
-                        habilidadeIcones[4].childNodes[1].src = `http://ddragon.leagueoflegends.com/cdn/13.4.1/img/spell/${campeaoAtual.spells[3].image.full}`
+                        habilidadeIcones[0].childNodes[1].src = `https://ddragon.leagueoflegends.com/cdn/13.4.1/img/passive/${campeaoAtual.passive.image.full}`
+                        habilidadeIcones[1].childNodes[1].src = `https://ddragon.leagueoflegends.com/cdn/13.4.1/img/spell/${campeaoAtual.spells[0].image.full}`
+                        habilidadeIcones[2].childNodes[1].src = `https://ddragon.leagueoflegends.com/cdn/13.4.1/img/spell/${campeaoAtual.spells[1].image.full}`
+                        habilidadeIcones[3].childNodes[1].src = `https://ddragon.leagueoflegends.com/cdn/13.4.1/img/spell/${campeaoAtual.spells[2].image.full}`
+                        habilidadeIcones[4].childNodes[1].src = `https://ddragon.leagueoflegends.com/cdn/13.4.1/img/spell/${campeaoAtual.spells[3].image.full}`
 
                         //NOME DAS HABILIDADES
                         habilidadeNome[0].innerHTML = campeaoAtual.passive.name
