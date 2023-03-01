@@ -46,7 +46,7 @@ main {
     background-color: transparent;
     border: none;
     border-bottom: 2px solid var(--caramelo);
-    color: white;
+    color: var(--branco);
     width: 350px;
     padding: 0.5rem 1rem;
     margin: 1rem auto;
@@ -139,12 +139,14 @@ main {
     align-items: center;
     justify-content: space-between;
     position: fixed;
-    top: 20%;
+    top: 50%;
+    transform: translateY(-50%);
     color: var(--branco);
     margin: 0 1.5rem 1rem 1.5rem;
     width: 1280px;
     height: 550px;
     animation: displayDado .1s linear 0s 1 normal forwards;
+    overflow-y: scroll;
 }
 
 .campeao-dados-img {
@@ -162,6 +164,21 @@ main {
     padding: 1.5rem;
     height: 100%;
     width: 100%;
+}
+
+.campeao-dado-nome-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.campeao-dado-nome-container img {
+    width: 20%;
+    display: none;
+}
+
+.campeao-dado-nome-container div {
+    text-align: center;
 }
 
 .campeao-dado-titulo {
@@ -307,8 +324,23 @@ footer a {
         font-size: .9rem;
     }
 }
-/* TROCAR IMAGEM E DEIXAR EM COLUNA */
+
 @media (max-width: 930px) {
+
+    .campeao-dados {
+        top: 50%;
+        transform: translateY(-50%);
+        animation: displayDado .1s linear 0s 1 normal forwards;
+    }
+
+    .campeao-dados-img {
+        display: none;
+    }
+
+    .campeao-dado-nome-container img {
+        width: 20%;
+        display: block;
+    }
 
 }
 
@@ -335,6 +367,10 @@ footer a {
         padding-left: 0;
     }
 
+    .campeao-dado-nome-container {
+        justify-content: space-evenly;
+    }
+
     .campeao-nome {
         padding: 0;
         margin: auto;
@@ -347,12 +383,61 @@ footer a {
 
     .nome-invalido span {
         font-size: .8rem;
-        color: red;
     }
 
     .img-container {
         height: 150px;
         width: 100%;
+    }
+}
+
+@media (max-height: 560px) {
+    .campeao-dados {
+        overflow-y: scroll;
+        height: 90vh;
+    }
+}
+
+@media (max-width: 560px) {
+
+    .campeao-dado-nome-container {
+        justify-content: left;
+        gap: 30px;
+    }
+    
+    .campeao-dado-titulo {
+        font-size: 0.8rem;
+    }
+    
+    .campeao-dado-nome {
+        font-size: 1.5rem;
+    }
+
+    .habilidade-titulo {
+        font-size: 1rem;
+    }
+
+    .habilidade-icone {
+        max-width: 40px;
+        max-height: 40px;
+    }
+
+    .habilidades-desc .habilidade span {
+        font-size: .7rem;
+        margin-top: .3rem;
+    }
+
+    .habilidades-desc .habilidade h4 {
+        font-size: 1.2rem;
+    }
+
+    .habilidade-desc {
+        font-size: 0.8rem;
+    }
+
+    .btn-fechar {
+        width: 25px;
+        height: 25px;
     }
 }
 

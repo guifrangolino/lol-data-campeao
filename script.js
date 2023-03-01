@@ -3,8 +3,6 @@ const campeaoImg = document.querySelectorAll('.campeao-img')
 const campeaoNome = document.querySelectorAll('.campeao-nome')
 const input = document.querySelector('.input-nome')
 const loadingGif = document.querySelector('.loading-gif')
-// const listaHabIcone = document.querySelectorAll('.habilidade-icone')
-// const listaHabDesc = document.querySelectorAll('.habilidade')
 
 
 // FETCH DOS CAMPEÕES
@@ -34,10 +32,9 @@ fetch('https://ddragon.leagueoflegends.com/cdn/13.4.1/data/pt_BR/champion.json')
         const campeao = document.querySelectorAll('.campeao')
         const dadosContainer = document.querySelector('.campeao-dados')
         const dadosImg = document.querySelector('.campeao-dados-img img')
-        // 
+        const dadosImgSmall = document.querySelector('.campeao-dado-nome-container img')
         const habilidadeIcones = document.querySelectorAll('.habilidade-icone')
         const habilidadeDados = document.querySelectorAll('.habilidade')
-        // 
         const habilidadeNome = document.querySelectorAll('.habilidade-nome')
         const habilidadeDesc = document.querySelectorAll('.habilidade-desc')
         const btnFechar = document.querySelector('.btn-fechar')
@@ -74,19 +71,16 @@ fetch('https://ddragon.leagueoflegends.com/cdn/13.4.1/data/pt_BR/champion.json')
                 if (champNome == 'NunueWillump') champNome = 'Nunu'
                 if (champNome == 'RenataGlasc') champNome = 'Renata'
                 if (champNome == 'VelKoz') champNome = 'Velkoz'
-                
-                // dadosContainer.style.display = 'flex'
 
-                // console.log(champNome)
                 dadosImg.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${dataCampeoes[champNome].id}_0.jpg`
                 if (champNome == 'Fiddlesticks') dadosImg.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/loading/FiddleSticks_0.jpg`
-                // console.log(campeaoDadosNome)
+                dadosImgSmall.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/tiles/${dataCampeoes[champNome].id}_0.jpg`
+                if (champNome == 'Fiddlesticks') dadosImg.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/loading/FiddleSticks_0.jpg`
                 
                 fetch(`https://ddragon.leagueoflegends.com/cdn/13.4.1/data/pt_BR/champion/${champNome}.json`)
                     .then(resp => resp.json())
                     .then(data => campeaoAtual = data.data[champNome])
                     .then(() => {
-                        // console.log(campeaoAtual.name)
 
                         // NOME E TITULO
                         campeaoDadosNome.innerHTML = campeaoAtual.name
@@ -114,8 +108,8 @@ fetch('https://ddragon.leagueoflegends.com/cdn/13.4.1/data/pt_BR/champion.json')
                         habilidadeDesc[4].innerHTML = campeaoAtual.spells[3].description
 
                     })
-                    .then(() => dadosContainer.style.display = 'flex')
-
+                    .catch(err => console.log(err))
+                    .finally(() => dadosContainer.style.display = 'flex')
             })
         })
         
@@ -148,12 +142,3 @@ function inputListener() {
     }
 
 }
-
-// CLIQUE NO CAMPEÃO
-
-// campeaoContainer.addEventListener('click', () => {
-//     for (let champ of campeaoContainer.children) {
-//         champ.addEventListener('click', () => console.log(champ))
-//     }
-// })
-
