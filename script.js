@@ -75,7 +75,7 @@ fetch('https://ddragon.leagueoflegends.com/cdn/13.4.1/data/pt_BR/champion.json')
                 dadosImg.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${dataCampeoes[champNome].id}_0.jpg`
                 if (champNome == 'Fiddlesticks') dadosImg.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/loading/FiddleSticks_0.jpg`
                 dadosImgSmall.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/tiles/${dataCampeoes[champNome].id}_0.jpg`
-                if (champNome == 'Fiddlesticks') dadosImg.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/loading/FiddleSticks_0.jpg`
+                if (champNome == 'Fiddlesticks') dadosImgSmall.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/tiles/FiddleSticks_0.jpg`
                 
                 fetch(`https://ddragon.leagueoflegends.com/cdn/13.4.1/data/pt_BR/champion/${champNome}.json`)
                     .then(resp => resp.json())

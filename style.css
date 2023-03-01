@@ -337,6 +337,11 @@ footer a {
         display: none;
     }
 
+    .campeao-dado-nome-container {
+        justify-content: left;
+        gap: 15%;
+    }
+
     .campeao-dado-nome-container img {
         width: 20%;
         display: block;
@@ -400,9 +405,13 @@ footer a {
 
 @media (max-width: 560px) {
 
+    .loading-gif {
+        width: 80%;
+    }
+
     .campeao-dado-nome-container {
         justify-content: left;
-        gap: 30px;
+        gap: 15%;
     }
     
     .campeao-dado-titulo {
