@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    list-style: none;
 }
 
 :root {
@@ -15,6 +16,7 @@
     --caramelo: #c28f2c;
     --branco: #ffffff;
     --cinza: #f8f8f8;
+    --cinza-escuro: #535659;
 }
 
 main {
@@ -31,9 +33,10 @@ main {
     flex-direction: column;
     align-items: center;
     padding: 1.5rem;
+    position: relative;
 }
 
-.main-container h2 {
+.main-container > h2 {
     color: var(--branco);
     font-size: 2rem;
 }
@@ -57,11 +60,11 @@ main {
 .campeoes {
     width: 100%;
     display: flex;
+    justify-content: center;
     padding: 1rem;
     flex-wrap: wrap;
     gap: 1.5rem;
     margin-top: 1rem;
-    /* transition: opacity .5s ease-in-out; */
 }
 
 .campeao {
@@ -129,6 +132,230 @@ main {
     font-size: 1.2rem;
 }
 
+.campeao-dados {
+    background: var(--azul3);
+    border: 1px solid var(--caramelo);
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 20%;
+    color: var(--branco);
+    margin: 0 1.5rem 1rem 1.5rem;
+    width: 1280px;
+    height: 550px;
+    animation: displayDado .1s linear 0s 1 normal forwards;
+}
+
+.campeao-dados-img {
+    height: 100%;
+}
+
+.campeao-dados-img img {
+    height: 100%;
+}
+
+.campeao-dado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    height: 100%;
+    width: 100%;
+}
+
+.campeao-dado-titulo {
+    font-size: 1.2rem;
+}
+
+.campeao-dado-nome {
+    font-size: 2.5rem;
+}
+
+.campeao-dado-habilidades {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.campeao-dado-habilidades ul {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    margin-top: 1.5rem;
+    position: relative;
+}
+
+.campeao-dado-habilidades ul li {
+    cursor: pointer;
+}
+
+.habilidade-titulo {
+    font-size: 2rem;
+}
+
+.habilidade-icone {
+    max-width: 60px;
+    max-height: 60px;
+}
+
+.habilidade-icone img {
+    width: 100%;
+}
+
+.habilidade-icone.ativo {
+    outline: 1px solid var(--caramelo);
+    outline-offset: 5px;
+    transform: translateY(-10px);
+    transition: .5s;
+}
+
+.habilidade-icone.ativo::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: var(--caramelo);
+    display: block;
+    border-radius: 50%;
+    margin: auto;
+    margin-top: 5px;
+}
+
+.habilidades-desc{
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.habilidades-desc .habilidade {
+    display: none;
+    flex-direction: column;
+    animation: displayDado 1.5s linear 0s 1 normal forwards;
+}
+
+.habilidades-desc .habilidade span {
+    color: var(--cinza-escuro);
+}
+
+.habilidades-desc .habilidade h4 {
+    font-size: 1.5rem;
+}
+
+.habilidades-desc .habilidade p {
+    margin-top: .5rem;
+}
+
+
+.btn-fechar {
+    border: none;
+    outline: none;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    background: none;
+    cursor: pointer;
+}
+
+.btn-fechar::after, .btn-fechar::before {
+    content: '';
+    background-color: var(--caramelo);
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    left: 0;
+}
+
+.btn-fechar::after {
+    transform: rotate(45deg);
+}
+
+.btn-fechar::before {
+    transform: rotate(-45deg);
+}
+
+.btn-fechar:hover::after, .btn-fechar:hover::before {
+    transition: .2s;
+    filter: brightness(50%);
+}
+
+footer {
+    background-color: var(--caramelo);
+    color: var(--branco);
+    text-align: center;
+}
+
+footer a {
+    color: var(--branco);
+}
+
+@media (max-width: 1280px) {
+    .campeao {
+        max-width: none;
+        width: 30%;
+    }
+
+    .campeao-dados {
+        width: 95%;
+    }
+}
+
+@media (max-width: 1050px) {
+    .habilidades-desc {
+        font-size: .9rem;
+    }
+}
+/* TROCAR IMAGEM E DEIXAR EM COLUNA */
+@media (max-width: 930px) {
+
+}
+
+@media (max-width: 769px) {
+
+    .input-nome {
+        width: 100%;
+    }
+
+    .main-container > h2 {
+        font-size: 1.5rem;
+    }
+
+    .campeoes {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .campeao {
+        width: 45%;
+    }
+
+    .campeao:hover .campeao-nome {
+        padding-left: 0;
+    }
+
+    .campeao-nome {
+        padding: 0;
+        margin: auto;
+        font-size: .8rem;
+    }
+
+    .nome-invalido img {
+        width: 150px;
+    }
+
+    .nome-invalido span {
+        font-size: .8rem;
+        color: red;
+    }
+
+    .img-container {
+        height: 150px;
+        width: 100%;
+    }
+}
+
 @keyframes anime {
 	0% {
 		opacity: 0;
@@ -138,5 +365,15 @@ main {
 	100% {
 		opacity: 1;
 		transform: translateX(0);
+	}
+}
+
+@keyframes displayDado {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
 	}
 }
